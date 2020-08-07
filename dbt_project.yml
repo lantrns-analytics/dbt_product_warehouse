@@ -1,0 +1,28 @@
+
+name: 'dbt_product_warehouse'
+version: '0.0.1'
+require-dbt-version: ">=0.17.0"
+config-version: 2
+
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+    - "target"
+    - "dbt_modules"
+
+vars:
+  cdp: segment
+  cdp-events-model: segment_web_page_views
+  cdp-sessions-model: segment_web_sessions
+
+models:
+  dbt_product_warehouse:
+    integration:
+      materialized: incremental
+    warehouse:
+      materialized: table
