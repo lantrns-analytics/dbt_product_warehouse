@@ -1,0 +1,6 @@
+packages:
+  - package: fishtown-analytics/dbt_utils
+    version: ">=0.5.0"
+
+  - package: fishtown-analytics/segment
+    version: ">=0.5.0"
