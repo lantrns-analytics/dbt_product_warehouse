@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: segment
+    database: segment_events
+    schema: javascript
+
+    tables:
+      - name: pages
+      - name: tracks
