@@ -10,12 +10,18 @@ with users as
 
   select * from {{ ref('int_product_users') }}
 
+),
+
+final as (
+
+  select
+    {{ dbt_utils.surrogate_key(
+      ['blended_user_id']
+    ) }} as platform_user_pk,
+    blended_user_id as segment_blended_user_id
+
+  from users
+
 )
 
-select
-  {{ dbt_utils.surrogate_key(
-    ['blended_user_id']
-  ) }} as platform_user_pk,
-  blended_user_id as segment_blended_user_id
-
-from users
+select * from final

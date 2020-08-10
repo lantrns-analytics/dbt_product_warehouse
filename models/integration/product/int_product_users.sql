@@ -7,7 +7,7 @@ with product_pages as (
 final as (
 
 	select distinct
-		website_user.blended_user_id
+		blended_user_id
 
 	from product_pages
 

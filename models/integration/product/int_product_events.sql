@@ -6,7 +6,7 @@ with events as (
 
 sessions as (
 
-  select * from {{ ref('stg_product_sessions') }}
+  select * from {{ ref('int_product_sessions') }}
 
 ),
 
@@ -15,6 +15,8 @@ joined as (
  select
    events.track_id as event_id,
    sessions.session_id,
+
+   sessions.session_start_tstamp,
 
    events.user_id,
    events.anonymous_id,
@@ -26,12 +28,12 @@ joined as (
 
    events.event_name,
 
-   events.event_ts
+   events.track_ts as event_ts
 
  from events
  left join sessions
   on events.blended_user_id = sessions.blended_user_id
-  and events.ts between sessions.session_start_tstamp and sessions.session_end_tstamp
+  and events.track_ts between sessions.session_start_tstamp and sessions.session_end_tstamp
 
 ),
 
