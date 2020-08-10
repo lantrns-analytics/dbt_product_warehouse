@@ -17,10 +17,9 @@ packages:
 - You'll need to have the `dbt_utils` package installed, with a version of at least `0.5.0`
 - You'll need to provide values for the following variables in your `dbt_project.yml` file
   - `cdp`: CDP used to bring in event data. Default value is `segment`. see Limitations below.
-  - `cdp-source-database`: This points to your Segment database. Default value is `segment`.
-  - `cdp-source-schema`: This points to the Segment data for your product. Default value is `product_events`.
-  - `cdp-pages-table`: This points to your raw segment table of pages. Default value is `pages`.
-  - `cdp-tracks-table`: This points to your raw segment table of events. Default value is `tracks`.
+  - `cdp-pages-table`: This points to your raw segment table of pages. Default value is `"{{ source('segment', 'pages') }}"`.
+  - `cdp-tracks-table`: This points to your raw segment table of events. Default value is `"{{ source('segment', 'pages') }}"`.
+  - `cdp-users-table`: This points to your raw segment table of users. Default value is `"{{ source('segment', 'users') }}"`.
   - `sessions-base-model`: This points to your model of sessions. Default value is `segment_web_sessions`.
 - Install the package with `dbt deps`
 

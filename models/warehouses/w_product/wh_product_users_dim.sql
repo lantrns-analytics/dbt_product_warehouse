@@ -18,7 +18,11 @@ final as (
     {{ dbt_utils.surrogate_key(
       ['blended_user_id']
     ) }} as platform_user_pk,
-    blended_user_id as segment_blended_user_id
+    blended_user_id as segment_blended_user_id,
+
+    user_ts, 
+    name,
+    email
 
   from users
 

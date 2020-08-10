@@ -1,6 +1,6 @@
 with source as (
 
-	select * from {{ source('segment', 'pages') }}
+	select * from {{ var('cdp-pages-table') }}
 
 ),
 
