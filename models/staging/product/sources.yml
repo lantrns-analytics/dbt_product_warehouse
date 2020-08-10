@@ -8,3 +8,4 @@ sources:
     tables:
       - name: pages
       - name: tracks
+      - name: users

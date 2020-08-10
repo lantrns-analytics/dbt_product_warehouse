@@ -1,6 +1,6 @@
 with source as (
 
-	select * from {{ source('segment', 'tracks') }}
+	select * from {{ var('cdp-tracks-table') }}
 
 ),
 

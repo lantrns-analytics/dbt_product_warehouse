@@ -1,15 +1,6 @@
-with product_pages as (
+with final as (
 
-	select * from {{ ref('stg_product_pages') }}
-
-),
-
-final as (
-
-	select distinct
-		blended_user_id
-
-	from product_pages
+	select * from {{ ref('stg_product_users') }}
 
 )
 
