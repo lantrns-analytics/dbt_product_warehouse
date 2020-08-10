@@ -67,6 +67,14 @@ Files:
 ...
 
 
+## Conventions
+- As a general rule of thumb, we follow [Fishtown Analytics' dbt Style Guide](https://github.com/fishtown-analytics/corp/blob/master/dbt_coding_conventions.md)
+- We use the following keys:
+  - `id`: those are natural keys from source systems
+  - `pk`: the primary key built within the warehouse
+  - `fk`: the foreign key built within the warehouse that allows to join to another entity
+
+
 
 ## Limitations
 - We currently source session data from [dbt's Segment package](https://github.com/fishtown-analytics/segment)
