@@ -17,12 +17,12 @@ clean-targets:
 
 vars:
   cdp: segment
-  cdp-events-model: segment_web_page_views
-  cdp-sessions-model: segment_web_sessions
+  cdp-source-name: segment
+  cdp-pages-table: pages
+  cdp-tracks-table: tracks
+  sessions-base-model: segment_web_sessions
 
 models:
   dbt_product_warehouse:
-    integration:
-      materialized: incremental
     warehouse:
       materialized: table
