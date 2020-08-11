@@ -1,0 +1,43 @@
+version: 2
+models:
+  - name: wh_product_events_fact
+    description: Interactions users had with your product
+    columns:
+      - name: product_event_pk
+        tests:
+          - unique
+          - not_null
+      - name: product_session_fk
+        tests:
+          - relationships:
+              to: ref('wh_product_sessions_fact')
+              field: product_session_pk
+              severity: warn
+      - name: product_user_fk
+        tests:
+          - relationships:
+              to: ref('wh_product_users_dim')
+              field: product_user_pk
+              severity: warn
+
+  - name: wh_product_sessions_fact
+    description: Sessions on your product by users
+    columns:
+      - name: product_session_pk
+        tests:
+          - unique
+          - not_null
+      - name: product_user_fk
+        tests:
+          - relationships:
+              to: ref('wh_product_users_dim')
+              field: product_user_pk
+              severity: warn
+
+  - name: wh_product_users_dim
+    description: Users of your product
+    columns:
+      - name: product_user_pk
+        tests:
+          - unique
+          - not_null

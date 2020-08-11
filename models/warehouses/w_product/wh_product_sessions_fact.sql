@@ -22,7 +22,7 @@ final as (
     ) }} as product_session_pk,
     {{ dbt_utils.surrogate_key(
       ['blended_user_id']
-    ) }} as product_user_pk,
+    ) }} as product_user_fk,
 
     session_start_tstamp as starting_ts,
     session_end_tstamp as ending_ts,

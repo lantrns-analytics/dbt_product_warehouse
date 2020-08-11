@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_product_events
+    description: Extracting events from staged data
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+
+  - name: int_product_sessions
+    description: Extracting sessions from staged data
+    columns:
+      - name: session_id
+        tests:
+          - unique
+          - not_null
+
+  - name: int_product_users
+    description: Extracting users from staged data
+    columns:
+      - name: blended_user_id
+        tests:
+          - unique
+          - not_null

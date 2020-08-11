@@ -5,7 +5,21 @@ sources:
     database: segment_events
     schema: javascript
 
+    freshness:
+      warn_after: {count: 1, period: day}
+
+    loaded_at_field: uuid_ts
+
     tables:
       - name: pages
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
       - name: tracks
-      - name: users
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
