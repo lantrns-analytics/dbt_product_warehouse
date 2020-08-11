@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_product_pages
+    description: Staging pages viewed by users
+    columns:
+      - name: page_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_product_sessions
+    description: Staging user sessions
+    columns:
+      - name: session_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_product_tracks
+    description: Staging events triggered by users
+    columns:
+      - name: track_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_product_users
+    description: Staging users who interacted with product
+    columns:
+      - name: blended_user_id
+        tests:
+          - unique
+          - not_null

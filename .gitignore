@@ -1,1 +1,5 @@
+.DS_Store
 .python-version
+target/
+dbt_modules/
+logs/

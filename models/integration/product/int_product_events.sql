@@ -33,7 +33,9 @@ joined as (
  from events
  left join sessions
   on events.blended_user_id = sessions.blended_user_id
-  and events.track_ts between sessions.session_start_tstamp and sessions.session_end_tstamp
+  and events.track_ts
+    between timestampadd(second, -1, sessions.session_start_tstamp)
+    and timestampadd(second, 1, sessions.session_end_tstamp)
 
 ),
 

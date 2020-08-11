@@ -21,7 +21,6 @@ vars:
   cdp: segment
   cdp-pages-table: "{{ source('segment', 'pages') }}"
   cdp-tracks-table: "{{ source('segment', 'pages') }}"
-  cdp-users-table: "{{ source('segment', 'users') }}"
   sessions-base-model: segment_web_sessions
 
 models:

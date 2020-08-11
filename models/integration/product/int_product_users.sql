@@ -1,7 +1,21 @@
-with final as (
+with pages as (
 
-	select * from {{ ref('stg_product_users') }}
+	select blended_user_id from {{ ref('stg_product_pages') }}
+
+),
+
+tracks as (
+
+	select blended_user_id from {{ ref('stg_product_tracks') }}
+
+),
+
+final as (
+
+	select blended_user_id from pages
+	union all
+	select blended_user_id from tracks
 
 )
 
-select * from final
+select distinct blended_user_id from final

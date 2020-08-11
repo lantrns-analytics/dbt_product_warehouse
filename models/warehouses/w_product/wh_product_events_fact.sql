@@ -20,9 +20,13 @@ final as (
     {{ dbt_utils.surrogate_key(
       ['event_id']
     ) }} as product_event_pk,
-    {{ dbt_utils.surrogate_key(
-      ['session_id']
-    ) }} as product_session_fk,
+    case
+      when session_id is null then null
+      else
+        {{ dbt_utils.surrogate_key(
+          ['session_id']
+        ) }}
+    end as product_session_fk,
     {{ dbt_utils.surrogate_key(
       ['blended_user_id']
     ) }} as product_user_fk,
