@@ -24,11 +24,3 @@ models:
         tests:
           - unique
           - not_null
-
-  - name: stg_product_users
-    description: Staging users who interacted with product
-    columns:
-      - name: blended_user_id
-        tests:
-          - unique
-          - not_null
