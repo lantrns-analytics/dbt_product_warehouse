@@ -20,7 +20,7 @@ clean-targets:
 vars:
   cdp: segment
   cdp-pages-table: "{{ source('segment', 'pages') }}"
-  cdp-tracks-table: "{{ source('segment', 'pages') }}"
+  cdp-tracks-table: "{{ source('segment', 'tracks') }}"
   sessions-base-model: segment_web_sessions
 
 models:

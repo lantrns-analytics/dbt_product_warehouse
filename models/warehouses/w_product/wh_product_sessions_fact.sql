@@ -24,6 +24,9 @@ final as (
       ['blended_user_id']
     ) }} as product_user_fk,
 
+    device,
+		device_category,
+
     session_start_tstamp as starting_ts,
     session_end_tstamp as ending_ts,
     duration_in_s as duration_s,
