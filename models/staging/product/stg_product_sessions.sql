@@ -11,6 +11,9 @@ final as (
     session_number,
     blended_user_id,
 
+		device,
+		device_category, 
+
     session_start_tstamp,
     session_end_tstamp,
     duration_in_s,

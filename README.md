@@ -1,10 +1,10 @@
 # The dbt's Product Warehouse
 The dbt product warehouse package provides standard flexible product analytics directly in your data warehouse.
 
-Our goal is to provide a set of models that will allow you to build analytics such as the ones found in SaaS tools such as Amplitude, Mixpanel and Heap. But it will allow more flexibility to go deeper into your data, plus easily join other sources of data for further analysis.
+Our goal is to provide a set of models that will allow you to build analytics such as the ones found in SaaS tools. But it will allow more flexibility to go deeper into your data, plus easily join other sources of data for further analysis.
 
 Our ERD so far looks like the following:
-![dbt Product Warehouse ERD](dbt_product_warehouse.png)
+![dbt Product Warehouse ERD](dbt_product_warehouse_erd.png)
 
 
 ## Setup
@@ -62,8 +62,8 @@ Files:
   - `warehouse/w_product/wh_product_metrics_xa.sql` - Packaged metrics generated on product
   - `warehouse/w_product/wh_product_funnels_xa.sql` - Funnels and paths completed by users
 
-### Our entire DAG looks like the following:
-...
+### Our current DAG looks like the following:
+![dbt Product Warehouse DAG](dbt_product_warehouse_dag.png)
 
 
 ## Conventions
